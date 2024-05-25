@@ -12,4 +12,9 @@ import data from '../data/data.json';
 })
 export class AppComponent {
   items = data;
+  cores = ['var(--light-red)', 'var(--orangey-yellow)', 'var(--green-teal)', 'var(--cobalt-blue)'];
+
+  getBackgroundColor(index: number): string {
+    return this.cores[index % this.cores.length];
+  }
 }

@@ -11,14 +11,16 @@
     </div>
     <div class="right-side right-content">
       <p>Summary</p>
-      <div class="pill-group" *ngFor="let item of items">
-        <section class="pill">
-          <span class="info">
-            <img [src]="item.icon" alt="Icon">
-            <p>{{ item.category }}</p>
-          </span>
-          <p>{{ item.score}} / 100</p>
-        </section>
+      <div class="div-pill-group">
+        <div class="pill-group" *ngFor="let item of items; let i = index" >
+          <section class="pill" [ngStyle]="{'background': 'color-mix(in srgb, ' + getBackgroundColor(i) + ' 5%, transparent)'}">
+            <span class="info">
+              <img [src]="item.icon" alt="Icon">
+              <p>{{ item.category }}</p>
+            </span>
+            <p>{{ item.score}}<span class="score">/ 100</span> </p>
+          </section>
+        </div>
       </div>
       <button class="btn-primary">Continue</button>
     </div>
